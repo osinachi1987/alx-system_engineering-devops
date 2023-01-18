@@ -1,4 +1,5 @@
 Requirements
+![0-first_9_tasks](https://user-images.githubusercontent.com/111088197/213179582-6bf94061-22b7-4e1f-9295-e4c44eb04cf9.jpg)
 General
 A README.md file, at the root of the folder of the project, is mandatory
 This project will be manually reviewed.
