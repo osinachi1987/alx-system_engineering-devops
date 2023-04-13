@@ -1,0 +1,93 @@
+ This Article is to Educate you on what really happens when you lunch your browser App (Chrome, Safari, Edge etc.) from your Computer and type in any web address (URL, Website) like www.google.com.
+
+
+Firstly, just before we delve into the actual case, I would want us to understand some terminologies and some protocols used in technology.
+1. The web browser uses a protocol called HTTP or HTTPS which is a more secure version of HTTP, while the internet we are trying to access uses a protocol called TCP/IP.
+2. The Computer/Laptop we using in accessing the internet is called a Client Machine.
+3. The Website we are trying to access are some HTML Files that are stored in an Online computer called Server. There are different types of servers depending on what the server is hosting. e.g. webservers are for hosting website through the help of a web application called Apache or Nginx.
+4. The computer does not really understand plain text or English language, they only understand numbers in form of IP addresses and 0s and 1s. And in return we humans are not really good with memorizing large numbers, so we communicate to the computer using plain Text while the computer takes in the plain text and convert the plain text into numbers or IP address with the help of a DNS server then send back the output on the screen. 
+Without putting in much words and with the little terminologies above it will be much easier to explain what actually happens when we type in www.google.com on our web browser.
+When you type a URL like "https://www.google.com" into a web browser and hit your enter key, there are a lot of things that go on before you finally get some output on your browser. Your browser has to figure out which server on the Internet is hosting the site. It does this by looking up the domain, google.com, to find the address.
+Each device on the Internet — servers, cell phones, your smart Gadgets etc. — all have a unique address called an IP address. An IP address contains four numbered parts: 172.16.10.36.
+But numbers like this are hard to remember! That’s where domain names come in. google.com is much easier to remember than 172.16.10.36, right? Imagine having to remember all the phone numbers of your contacts without having the Contacts app on your phone. Your Contacts app lets you look up phone numbers by name. This is what the DNS does, helps you convert your domain names to IP address, after much explanations on this topic we shall talk about DNS in a bit.
+1.	Your computer sends a request to the domain name system (DNS) server which serves as an address book for all domain names. This then sends back the exact IP address of the server hosting https://www.google.com.
+2.	Knowing this IP, your computer then establishes a connection with the server through the IP address. This type of connection is known as Transmission Control Protocol (TCP) and your computer been able to establish this connection through the Internet Protocol (IP). If the entire connection process is established the process is known as handshaking.
+3.	If your computer is behind a firewall, the firewall checks to ensure that the particular request you are making is allowed before permitting it. Also, if the server you are trying to access is also behind a firewall, a similar check will be done before you are finally being able to connect to the server.
+4.	After establishing the connection, your browser now sends a request of the webpage using an encryption protocol like Secure Sockets Layer (SSL) or Transport Layer Security (TLS) in order to encrypt the data that will be shared between your computer and the server. This type of encryption is what is responsible for the "s" in "https" which also implies that the connection is secure. End to end encryption prevents a hacker or a third party to view the information you are sending or receiving from your browser and server. SSL are certificate that are installed on the browsers to make connections secure.
+5.	Companies like Google with high traffic maintain a host of servers and for that matter they have a load balancer that receives most of the requests and sends it to a particular server. The request from your browser will therefore hit the load balancer first which will forward it to a specific server depending on the algorithm used by the load balancer.
+6.	The server that receives the request then sends a response back to the load balancer which also forwards the response back to your browser. This response will mostly include HTML, CSS, and JavaScript files that makes up Google's homepage stored in the webserver.
+7.	The HTML files returned tells the browser how to render the content of the page. The CSS file tells the browser how to style the content while the JavaScript file adds interactivity to the page.
+8.	If there is a need for some dynamic content such as Google search results, then the web server will make a request to the application server, which in turn may make a request to a database server to get some data and send it back to the web server. The web server will then include these in the response that it sends back to the browser.
+9.	Finally, the browser will render the page and display it to you.
+
+This process may involve additional steps if the DNS record is not found at any of the name servers, or if the DNS record has been configured to use a service such as DNS load balancing or content delivery networks (CDN).
+Once the IP address has been resolved, it is cached by the local DNS resolver and the browser so that future requests for the same domain name can be resolved more quickly.
+The length of time that the DNS record is cached (the "TTL," or Time To Live) is determined by the authoritative name server and can be configured by the domain owner.
+TCP/IP connection
+TCP (Transmission Control Protocol) and IP (Internet Protocol) are two of the main protocols that make up the internet.
+They work together to establish a connection between a client and a server and facilitate the transmission of data between them.
+When you enter "google.com" into a web browser, the browser uses TCP/IP to establish a connection with the server that hosts the website.
+Here's what happens in more detail:
+1.	The browser sends a request to the server using IP to establish a connection.
+2.	The server receives the request and sends back a message acknowledging the request to establish a connection. This is the handshake process.
+3.	Once the handshake is complete, the browser can send a request for the webpage it wants to access (in this case, the homepage of google.com). This request is sent using TCP, which ensures that the request is transmitted reliably and in the correct order.
+4.	The server receives the request and sends back the HTML code for the homepage of google.com to the browser. This response is also sent using TCP to ensure reliable transmission.
+5.	The browser receives the HTML code and uses it to render the webpage on your screen. Any resources (such as images) that the webpage needs are also requested and received using TCP/IP.
+Firewall
+A firewall is a security system that monitors and controls incoming and outgoing network traffic based on predetermined security rules. Its primary purpose is to protect a network from external threats, such as hackers and malware.
+When you type a URL like "google.com" into your browser, the request that your browser makes to Google's server passes through the firewall on its way. The firewall checks the incoming request to make sure it is allowed based on its security rules.
+There are two main types of security rules that a firewall uses to check incoming requests:
+1.	Rules that allow or block traffic based on the source and destination of the request. For example, a firewall may be configured to block all traffic from certain countries or to allow only certain IP addresses to access the network.
+2.	Rules that allow or block traffic based on the type of traffic. For example, a firewall may be configured to block all traffic on certain ports (such as those used by malware) or to allow only certain types of traffic (such as HTTP or HTTPS).
+If the incoming request meets the security rules set by the firewall in front of Google's server, it is allowed through, and the browser is able to access the website.
+However, if the request does not meet the security rules, it is blocked, and the browser is unable to access the website.
+HTTPS/SSL
+HTTPS (Hypertext Transfer Protocol Secure) is a secure version of the HTTP protocol used to transmit data on the internet. It is used to encrypt the data transmitted between your browser and Google's server.
+SSL (Secure Sockets Layer) and TLS (Transport Layer Security) are encryption protocols that are used to secure the data transmitted over HTTPS.
+When your browser establishes a connection with Google's server using HTTPS, your browser and Google's server first agree on the version of SSL/TLS to use and then create a secure, encrypted channel for transmitting the data.
+Let me use an analogy to explain what is going on here.
+HTTPS is like a locked box that is used to send messages over the internet. When you want to send a message using HTTPS, you put the message in the locked box and send it to the person you want to receive the message. Only the person you are sending the message to has the key to unlock the box and read the message.
+SSL/TLS are like special codes that are used to lock and unlock the box. When you want to send a message using HTTPS, you and the person you are sending the message to agree on the code to use to lock and unlock the box. This way, only you and the person you are sending the message to know the code and can read the message.
+When you type "google.com" into your browser, the browser is like the person sending the message. The server that hosts google.com is like the person receiving the message. The browser sends a request for the webpage using HTTPS, which is like putting the request in the locked box and sending it to the server. The server then sends the webpage back to the browser using HTTPS, which is like putting the webpage in the locked box and sending it back to the browser.
+Load-balancer
+A load balancer is a device that distributes incoming network traffic across a group of servers or resources.
+Its primary function is to ensure that the traffic is distributed evenly across the servers in order to avoid overloading any single server and to increase the overall capacity and reliability of the system.
+A company like Google, which receives billions of website visitors a day, will need a lot of servers to serve all these users. Therefore, there will be a need for them to set up a load balancer to ensure that some of the servers are not overburdened while others are being underutilized.
+In the case of a browser trying to access google.com, the load balancer would receive the incoming request from the browser and then forward it to one of the servers in the Google server network. The particular server chosen will depend on the type of load balancing algorithm implemented.
+Web server
+A web server is a computer program that is responsible for handling requests for web pages from clients (such as a browser trying to access google.com). When a client sends a request for a web page to a web server, the server processes the request and returns the appropriate response to the client.
+This means that when trying to access google.com, Google's server will receive a request from the load balancer.
+The web server would then process the request and generate a response, which would typically include the HTML, CSS, and JavaScript files that make up the web page.
+The web server would then send this response back to the load balancer, which would forward it on to the browser. The browser would then use the HTML, CSS, and JavaScript files to render the web page for the user.
+Application server and database (if applicable)
+Unlike the web server, the application server handles dynamic content. When using "google.com", the application server will be responsible for generating the search results (which change based on the query you put into the search engine).
+When you submit a search query to Google, the request is first sent to the load balancer, which forwards it to one of the web servers in the Google server network. The web server then sends the request to the application server, which processes the request and generates the search results.
+Depending on the complexity of the search query, the application server may need to make a request to a database in order to retrieve the necessary data.
+For example, if you are searching for a specific product on an e-commerce website, the application server may need to retrieve information about the product from a database.
+Once the application server has obtained the necessary data, it sends it back to the web server, which includes it in the response that is sent back to the the browser. The browser then uses this information to display the search results to you.
+Rendering the page
+When a browser receives a response from a web server, it processes the HTML, CSS, and JavaScript files that are included in the response in order to render the web page.
+The rendering process involves interpreting the HTML and CSS code, rendering any images or other media that are included on the page, and executing any JavaScript code that is present on the page.
+In your case, your browser would receive the response from the web server, which includes the HTML, CSS, and JavaScript files that make up the Google web page.
+The browser would then use these files to render the page and display it to you. This process typically involves the following:
+•	displaying the text and images on the page in the appropriate positions
+•	formatting the text and layout according to the CSS styles
+•	executing any JavaScript code that is present on the page
+Once the page has been fully rendered, you can now interact with it by clicking links, entering text, or interacting with other elements on the page.
+Conclusion
+This Article is an initiative and also an assignment from ALX software Engineering program on what happens when you type google.com on your browser and press enter. This article and some content of information used was inspired from Dr. Ehoneah Obed who is also a Student of ALX software engineering program but ahead of me in the program.
+
+In my Journey to becoming a software Engineer (Full Stack) ALX has really helped me and sharped me into someone I thought was not possible, I give ALX the full credit for the insight and educational contents that brought me here.
+
+My Name is Festus Agu, I am an ALX Student!
+Email: connect2festus@gmail.com
+nachilion@gmail.com
+Website: apcomp.tech
+Twitter: @Agufestus
+Linkedin: https://www.linkedin.com/in/festus-agu-7186b1102/
+
+
+
+
+ 
+
